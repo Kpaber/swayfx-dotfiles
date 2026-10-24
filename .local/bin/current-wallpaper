@@ -2,10 +2,10 @@
 pkill swaybg
 THEME=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 if [ "$THEME" == "prefer-dark" ]; then
-	swaybg -o 'eDP-1' -i /home/kpaber/Изображения/wallpapers/wallhaven-qr3mpq_1920x1080.png -m fill &
-	swaybg -o 'HDMI-A-1' -i /home/kpaber/Изображения/wallpapers/wallhaven-qr3mpq_1920x1080.png -m fill &
+	swaybg -o 'eDP-1' -i  ~/.local/share/wallpapers/wallpaper-dark -m fill &
+	swaybg -o 'HDMI-A-1' -i ~/.local/share/wallpapers/wallpaper-dark -m fill &
 else
-	swaybg -o 'eDP-1' -i /home/kpaber/Изображения/wallpapers/wallhaven-exd3w8_1920x1080.png -m fill &
-	swaybg -o 'HDMI-A-1' -i /home/kpaber/Изображения/wallpapers/wallhaven-exd3w8_1920x1080.png -m fill &
+	swaybg -o 'eDP-1' -i ~/.local/share/wallpapers/wallpaper-light -m fill &
+	swaybg -o 'HDMI-A-1' -i ~/.local/share/wallpapers/wallpaper-light -m fill &
 fi
 	
