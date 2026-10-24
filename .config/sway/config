@@ -1,0 +1,229 @@
+#---session-settings------------------------------------------------------------------
+
+input "type:keyboard" {
+	xkb_layout "us, ru"
+	xkb_options "grp:win_space_toggle"
+}
+
+input * xkb_numlock enable
+
+input "type:pointer" {
+	pointer_accel 0.0
+	accel_profile "flat"
+}
+input "type:touchpad" {
+	tap enabled
+	natural_scroll enabled
+}
+
+output HDMI-A-1 resolution 1920x1080 scale 2 position 0 0 
+output eDP-1 resolution 1920x1080 position 960 0
+#--------------------------------------------------------------------------------------
+
+#---keybinds---------------------------------------------------------------------------
+
+set $mod Mod4
+set $mod_alt Mod1
+set $term foot
+set $rofi rofi -show drun -location 1 -theme $HOME/.config/rofi/themes/drun.rasi
+
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ -l 1 2%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+bindsym $mod_alt+f3 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ -l 1 2%+
+bindsym $mod_alt+f2 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+bindsym $mod_alt+f1 exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+bindsym XF86MonBrightnessUp exec brightnessctl s 2%+ 
+bindsym XF86MonBrightnessDown exec brightnessctl s 2%- 
+
+bindsym $mod_alt+f12 exec brightnessctl s 2%+
+bindsym $mod_alt+f11 exec brightnessctl s 2%-
+
+floating_modifier $mod
+default_orientation auto
+
+bindsym --to-code $mod+d exec $rofi
+bindsym --to-code $mod+p exec power.sh
+bindsym --to-code $mod+Return exec $term
+
+
+bindsym --to-code $mod+b exec firefox
+bindsym --to-code $mod+c exec qalculate
+bindsym --to-code $mod+l exec swaylock
+bindsym --to-code $mod+x exec xfce4-power-manager-settings
+bindsym --to-code $mod+f exec thunar
+bindsym --to-code $mod+v exec pavucontrol
+bindsym --to-code $mod+i exec iwgtk
+bindsym --to-code $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+bindsym --to-code $mod+s exec grim - | swappy -f -
+bindsym --to-code $mod+t exec theme-switcher
+bindsym --to-code $mod+m exec wl-mirror eDP-1
+
+bindsym --to-code $mod+q kill
+bindsym --to-code $mod+Shift+c restart
+
+bindsym --to-code $mod+$mod_alt+r reload
+bindsym --to-code $mod+$mod_alt+q exec swaymsg exit
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left 40px
+bindsym $mod+Shift+Down move down 40px
+bindsym $mod+Shift+Up move up 40px
+bindsym $mod+Shift+Right move right 40px
+
+# Поменять местами с окном слева
+bindsym $mod+Ctrl+Left mark --add "source"; focus left; swap container with mark "source"; unmark "source"
+
+# Поменять местами с окном справа
+bindsym $mod+Ctrl+Right mark --add "source"; focus right; swap container with mark "source"; unmark "source"
+
+# Поменять местами с окном сверху
+bindsym $mod+Ctrl+Up mark --add "source"; focus up; swap container with mark "source"; unmark "source"
+
+# Поменять местами с окном снизу
+bindsym $mod+Ctrl+Down mark --add "source"; focus down; swap container with mark "source"; unmark "source"
+
+#bindsym --to-code $mod_alt+v split v
+#bindsym --to-code $mod_alt+c split h
+
+bindsym --to-code $mod_alt+f fullscreen toggle
+
+#bindsym $mod_alt+s layout stacking
+#bindsym --to-code $mod_alt+w layout tabbed
+#bindsym --to-code $mod_alt+t layout toggle split
+
+bindsym $mod+Shift+space focus mode_toggle 
+bindsym --to-code $mod_alt+s floating toggle 
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws6 output eDP-1
+workspace $ws7 output eDP-1
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws10 output HDMI-A-1
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym --to-code $mod+r mode "resize"
+
+mode "resize" {
+	bindsym Left resize shrink width 40 px or 10 ppt
+    bindsym Down resize grow height 40 px or 10 ppt
+    bindsym Up resize shrink height 40 px or 10 ppt
+    bindsym Right resize grow width 40 px or 10 ppt
+	
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym --to-code $mod+r mode "default"
+}
+
+#--------------------------------------------------------------------------
+
+#---autostart--------------------------------------------------------------
+exec dbus-update-activation-environment --systemd --all
+exec sleep 0.3 && swaylock
+exec current-wallpaper
+exec waybar
+exec dunst
+exec lxpolkit
+exec xfce4-power-manager
+exec autotiling -l 2
+exec tg-ws-proxy
+#--------------------------------------------------------------------------
+
+#---eye-candy-----------------------------------------------------------------
+animation_duration_ms 250
+
+gaps inner 12px
+
+#font pango:JetBrainsMono Nerd Font Mono 12
+
+layer_effects "waybar" shadows enable; corner_radius 4
+layer_effects "rofi" blur enable; shadows enable; corner_radius 4
+corner_radius 4
+
+blur enable
+blur_xray disable
+blur_passes 3
+blur_radius 5
+blur_noise 0.1
+
+shadows enable
+shadows_on_csd enable
+shadow_color #11151c80  
+
+default_border pixel 4
+default_floating_border pixel 4
+
+#class						border		backgr		text		indicator	child_border
+client.focused				#d08770		#d08770 	#1f2531 	#d08770 	#d08770
+client.focused_inactive 	#2e3440  	#2e3440     #1f2531		#d08770    	#d8dee950
+client.unfocused        	#d8dee9  	#d8dee9     #1f2531  	#d08770    	#d8dee950
+
+#client.urgent           	#bf616a		#ebcb8b 	#1f2531 	#d8dee9   	#d8dee9
+
+for_window [app_id=".*gamescope.*"] blur disable; shadows disable
+
+#---rules------------------------------------------------------------------------
+
+for_window [app_id="xfce4-power-manager-settings"] floating enable
+for_window [app_id="pavucontrol"]  			floating enable, resize set 800 504, move position 952 -4
+for_window [class="AmneziaVPN"]  			floating enable
+for_window [app_id="blueman-manager"] 		floating enable, resize set 500 504, move position 1336 -4
+for_window [app_id="iwgtk"] 				floating enable, resize set 500 504, move position 1396 -4
+
+for_window [app_id="org.telegram.desktop"] 	move container to workspace $ws1
+for_window [app_id="vesktop"] 				move container to workspace $ws1
+for_window [app_id="discord"] 				move container to workspace $ws1
+
+for_window [class="steam"] 					move container to workspace $ws2
+for_window [class="org.vinegarhq.Sober"] 	move container to workspace $ws2
+for_window [app_id="org.prismlauncher.PrismLauncher"] move container to workspace $ws2
+for_window [class="org-springframework-boot-loader-PropertiesLauncher"] move container to workspace $ws2
+
+for_window [app_id="firefox"] 				move container to workspace $ws3
+
+for_window [app_id="baobab"] move container to workspace $ws4
+for_window [app_id="thunar"] move container to workspace $ws4

@@ -1,0 +1,10 @@
+swayfx
+waybar
+swaylock-effects
+swaybg
+foot
+kvantum
+dunst
+rofi
+autotiling
+lxpolkit

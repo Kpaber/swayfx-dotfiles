@@ -1,0 +1,123 @@
+/* Палитра цветов из вашего Polybar */
+@define-color background-alt #8E99AD;
+@define-color background #eceff4;
+@define-color main #d08770;      /* было #d08770 — теперь глубже, читается на фоне */
+@define-color text #1f2531;
+
+@define-color red #bf616a;       /* было #bf616a */
+@define-color green #96b17f;     /* было #a3be8c — стал заметно темнее */
+@define-color yellow #c5a565;    /* было #ebcb8b — иначе на светлом почти не видно */
+@define-color blue #81a1c1;      /* было #81a1c1 */
+@define-color magenta #b48ead;   /* было #b48ead */
+@define-color cyan #7bb3c3;      /* было #8fbcbb */
+@define-color white #a5abb6;     /* белый оставляем как белый */
+
+/* Общие стили для бара */
+window#waybar {
+	background-color: @background;
+	color: @text;
+	font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 4px;
+}
+
+/* Эмуляция отступов между модулями (module-margin = 8px) */
+#custom-logo,
+#workspaces,
+#custom-weather,
+#clock,
+#battery,
+#wireplumber,
+#backlight,
+#language,
+#network,
+#custom-power,
+#tray {
+	padding: 0 8px;
+}
+
+/* Модуль ЛОГО */
+#custom-logo {
+	color: @red;
+	font-size: 16px;
+	margin:0 4px;
+}
+
+/* Рабочие столы (xworkspaces аналог) */
+#workspaces button {
+	color: @background-alt;
+	padding: 0 4;
+	border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+	color: @cyan;
+/*	border-bottom: 3px solid @main;  Нижнее подчеркивание активного */
+}
+
+#workspaces button.urgent {
+	color: @red;
+}
+
+/* Цвета для остальных модулей из Polybar */
+#clock {
+	color: @cyan;
+}
+
+#window {
+	color: @text;
+}
+
+#battery {
+	color: @green;
+}
+#battery.charging, #battery.full {
+	color: @green;
+}
+#battery.discharging {
+	color: @yellow;
+}
+#battery.low {
+	color: @red;
+}
+
+#wireplumber {
+	color: @blue;
+}
+#wireplumber.muted {
+	color: @background-alt;
+}
+
+#backlight {
+	color: @magenta;
+}
+
+/* Модуль языка */
+#language {
+	color: @main;
+}
+
+#network {
+	color: @green;
+}
+#network.disconnected {
+	color: @background-alt;
+}
+
+#custom-power {
+	color: @red;
+	margin: 0 4px;
+}
+
+#custom-bluetooth {
+	color: @yellow;
+	margin: 0 8px; 
+}
+
+/*#tray {
+	background-color: @background-alt;
+	border-radius: 4px;
+	margin: 4px 0;
+}
+*/

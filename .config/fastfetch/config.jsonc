@@ -1,0 +1,126 @@
+{
+	"logo": {
+		"padding": {
+			"top": 1,
+			"left": 3,
+			//"right": 2,
+		},
+		"color":{
+			"1": "white",
+			"2": "red",
+		},
+	},
+	"display": {
+		"separator": " ",
+	},
+	"modules": [	
+		"title",
+		"separator",
+		
+//hardware submodule
+		{
+			"type": "host",
+			"key": "󰍹",
+			"keyColor": "blue",
+		},
+		{
+			"type": "cpu",
+			"key": "├󰍛",
+			"keyColor": "blue",
+		},
+		{
+			"type": "memory",
+			"key": "├󰑭",
+			"keyColor": "blue",
+		},
+/*		{
+			"type": "swap",
+			"key": "├󰑭",
+		},*/
+		
+		{
+			"type": "gpu",
+			"key": "├󰢮",
+			"keyColor": "blue",
+		},
+/*		{
+			"type": "gpudriver",
+			"key": "",
+		},*/
+		{
+			"type": "disk",
+			"key": "└",
+			"keyColor": "blue",
+		},
+		"break",
+// os submodule
+		{
+			"type": "os",
+			"key": "",
+			"keyColor": "green",
+		},
+		{
+			"type": "kernel",
+			"key": "├",
+			"keyColor": "green",
+		},
+		{
+			"type": "packages",
+			"key": "├",
+			"keyColor": "green",
+		},
+		{
+			"type": "shell",
+			"key": "├",
+			"keyColor": "green",
+		},
+		{
+			"type": "uptime",
+			"key": "└󰅐",
+			"keyColor": "green",	
+		},
+		"break",
+// WM submodule
+		{
+			"type": "de",
+			"key": "",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "wm",
+			"key": "󰙀",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "wmtheme",
+			"key": " ",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "terminal",
+			"key": "├",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "theme",
+			"key": "├",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "icons",
+			"key": "├",
+			"keyColor": "yellow",
+		},
+		{
+			"type": "cursor",
+			"key": "└󰇀",
+			"keyColor": "yellow",
+		},
+
+		{
+			"type": "colors",
+			"symbol": "circle",
+		},
+		
+	],
+}

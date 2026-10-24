@@ -1,0 +1,78 @@
+{
+	"logo": {
+		"type": "small",
+		"padding": {
+			"top": 1,
+			"left": 2,
+			"right": 2,
+		},
+	},
+	"display": {
+	"separator": " : ",
+	},
+	"modules": [
+		"title",
+		"separator",
+
+		{
+			"type": "host",
+			"key": "󰍹"
+		},
+
+
+/*		{
+			"type": "custom",
+			"format": "{#red}my pc :>"
+			//"outputColor": "red",
+		},
+		"separator",
+*/		
+		{
+			"type": "os",
+			"key": "├ ",
+		},
+
+		{
+			"type": "kernel",
+			"key": "├ "
+		},
+
+		{
+			"type": "wm",
+			"key": "├ ",
+		},
+
+		{
+			"type": "terminal",
+			"key": "├ ",
+		},
+
+/*		{
+			"type": "cpu",
+			"key": "󰍛",
+		},
+
+		{
+			"type": "memory",
+            "key": "󰑭",	
+		},
+*/
+		{
+			"type": "packages",
+			"key": "├ ",
+		},
+
+		{
+			"type": "disk",
+			"key": "├ ",
+		},		
+
+		{
+			"type": "uptime",
+            "key": "└ 󰅐",	
+		},
+		
+	],
+}
+
+

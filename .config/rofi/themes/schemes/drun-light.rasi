@@ -1,0 +1,102 @@
+/*Переменные, аля цвета */
+
+configuration {
+//    modi: "power-menu:rofi-power-menu";
+    show-icons: true;
+//    display-power-menu: "";
+//    sidebar-mode: false;
+}
+	
+*{
+	txt : #1f2531;
+	bg : #eceff4;
+//	main : #334f7d;
+	font: "JetBrains NerdFont Mono 14";
+	bg-alt: #d8dee9;
+	main : #d08770;
+}
+
+window {
+	//height: 64%;
+	width: 28%;
+	//border-radius: 16px;
+	border: 4px;
+	border-color: @bg;
+	background-color: @bg;
+	padding: 16px;
+	border-radius: 4px;
+	x-offset: 12;
+	y-offset: 8;	
+}
+
+mainbox {	
+	children: [listview, inputbar];
+	background-color: @bg;
+	spacing: 16px;
+//	border: 4px;
+//	border-color: @bg-alt;
+//	border-radius: 16px;
+}
+
+inputbar {
+    children: [ entry];
+//	background-color: @bg-alt;
+//	height: 100px;
+//	width: 50px;
+	border: 8px;
+	border-color: @bg-alt;
+	border-radius: 4px;
+}
+
+entry{
+//	expand: false;
+	placeholder: "...";
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	//height: 30px;
+	background-color: @bg-alt;
+	text-color: @txt;
+//	text-radius: 16px;
+}
+
+listview{
+	children: [element-icon, element];
+//	padding: 20px;
+	lines: 7;
+	//columns: ;
+	background-color: @bg;
+	spacing: 8px;
+//	layout: vertical;
+}
+
+element{
+	background-color: @bg;
+	border-radius: 4px;
+	border: 4px;
+	padding: 4px;
+}
+
+element selected{
+//	background-color: @main;
+	border-color: @main;
+}
+
+element-text{
+	text-color: @txt;
+	background-color: @bg;
+}
+
+element-text selected{
+//	background-color: @main;
+	text-color: @text;
+}
+
+element-icon{
+	size: 32;
+	background-color: @bg;
+	//spacing: 20px;
+}
+
+element-icon selected{
+//	background-color: @main;
+}

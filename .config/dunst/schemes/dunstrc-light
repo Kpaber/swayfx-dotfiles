@@ -1,0 +1,18 @@
+[global]
+	format = "<b>%s</b>\n%b"
+    origin = bottom-right
+ 	notification_limit = 5
+    timeout = 5
+    icon_position = left
+    max_icon_size = 48
+    frame_width = 2
+	frame_color = "#d08770"
+    font = "JetBrainsMono Nerd Font Mono 14"
+    gap_size = 1
+    foreground = "#1f2531"
+    background = "#eceff4"
+    offset = (8, 8)
+    corner_radius = 4
+    show_indicators = false
+    highlight = "#d08770"
+

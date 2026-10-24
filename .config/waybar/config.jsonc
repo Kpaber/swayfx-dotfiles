@@ -1,0 +1,96 @@
+[
+	{
+		"output": "eDP-1",
+		"ipc": "true",
+		"id": "bar-0",
+		"exclusive": "false",
+		"layer": "top",
+		"modifier-reset": "press",
+		
+		"height": 32,
+		"margin-top": 8,
+		"margin-left": 12,
+		"margin-right": 12,
+		
+		"modules-left": [
+			"custom/logo", 
+			"sway/workspaces",
+			"custom/weather",
+			],
+		"modules-center": ["clock"],
+		"modules-right": [
+			"tray",
+			"battery",
+			"wireplumber",
+			"backlight",
+			"sway/language",
+			"custom/bluetooth",
+			"network",
+			"custom/power",
+		],
+
+		"custom/logo": {
+			"format": "",
+			"on-click": "rofi -show drun -location 1 -theme $HOME/.config/rofi/themes/drun.rasi -xoffset 36 -yoffset 44",
+		},
+		"sway/workspaces": {
+			"disable-scroll": true,
+			"all-outputs": true,
+			"format": "{icon}",
+			"format-icons": {
+				"default": "󰝥",
+				"focused": "󰜗",
+			}
+		},
+		"custom/weather": {
+			"exec": "curl -s 'wttr.in/Барнаул?format=%c+%t+%C&lang=ru'",
+			"interval": 900,
+		},
+		"clock": {
+			"interval": 1,
+			"format": "󰥔 {:%H:%M %d-%m-%Y}"
+		},
+		"battery": {
+			"format": "{icon} {capacity}%",
+			"format-charging": "󱐋 {capacity}%",
+/*			"format-plugged": "󱐋 {capacity}%", */
+			"format-icons": ["", "", "", "", ""]
+		},
+		"wireplumber": {
+			"format": "{icon} {volume}%",
+			"format-muted": "󰝟",
+			"format-icons": ["", "", ""],
+			"on-click": "pavucontrol",
+			"on-click-right": "pamixer --toggle-mute"
+		},
+		"backlight": {
+			"scroll-step": 1,
+			"format": "{icon} {percent}%",
+			"format-icons": ["", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
+		},
+		"sway/language": {
+			"format": "{}"
+		},
+		"network": {
+			"interval": 5,
+			"format-wifi": "󰖩 {essid}",
+			"format-disconnected": "",
+			"on-click": "iwgtk"
+		},
+		"custom/bluetooth": {
+			"format": "󰂯",
+			"on-click": "blueman-manager"
+		},
+		
+		"custom/power": {
+			"format": "⏻",
+			"on-click": "power.sh"
+		},
+		"tray": {
+			"icon-size": 20,
+			"spacing": 4
+		}
+	}
+]
+
+

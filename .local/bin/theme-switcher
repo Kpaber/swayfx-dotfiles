@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+
+THEME=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+
+if [ "$THEME" == "prefer-dark" ]; then
+	gsettings set org.gnome.desktop.interface gtk-theme Adwaita
+	gsettings set org.gnome.desktop.interface color-scheme prefer-light
+	gsettings set org.gnome.desktop.interface icon-theme Papirus-Light
+	
+	kvantummanager --set KvGnome
+	mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css.bak
+	current-wallpaper
+	flatpak override --user --env=GTK_THEME=Adwaita
+	
+	ln -sf ~/.config/foot/schemes/foot-light.ini 			~/.config/foot/foot.ini
+	ln -sf ~/.config/waybar/schemes/style-light.css 		~/.config/waybar/style.css
+	ln -sf ~/.config/rofi/themes/schemes/drun-light.rasi 	~/.config/rofi/themes/drun.rasi
+	ln -sf ~/.config/rofi/themes/schemes/power-light.rasi 	~/.config/rofi/themes/power.rasi
+	ln -sf ~/.config/dunst/schemes/dunstrc-light 			~/.config/dunst/dunstrc
+	
+	pkill foot -SIGUSR2
+	pkill waybar -SIGUSR2
+	dunstctl reload
+	notify-send Light_theme On
+else
+	gsettings set org.gnome.desktop.interface gtk-theme Nordic-darker-v40
+	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+	gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+	
+	kvantummanager --set Nordic
+	mv ~/.config/gtk-4.0/gtk.css.bak ~/.config/gtk-4.0/gtk.css
+	current-wallpaper
+	flatpak override --user --env=GTK_THEME=Nordic-darker-v40
+
+	ln -sf ~/.config/foot/schemes/foot-dark.ini 			~/.config/foot/foot.ini
+	ln -sf ~/.config/waybar/schemes/style-dark.css 			~/.config/waybar/style.css
+	ln -sf ~/.config/rofi/themes/schemes/drun-dark.rasi 	~/.config/rofi/themes/drun.rasi
+	ln -sf ~/.config/rofi/themes/schemes/power-dark.rasi 	~/.config/rofi/themes/power.rasi
+	ln -sf ~/.config/dunst/schemes/dunstrc-dark 			~/.config/dunst/dunstrc
+	
+	pkill foot -SIGUSR1
+	pkill waybar -SIGUSR2
+	dunstctl reload
+	notify-send Dark_theme On	
+fi
