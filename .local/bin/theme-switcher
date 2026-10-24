@@ -8,7 +8,6 @@ if [ "$THEME" == "prefer-dark" ]; then
 	gsettings set org.gnome.desktop.interface icon-theme Papirus-Light
 	
 	kvantummanager --set KvGnome
-	mv ~/.config/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css.bak
 	current-wallpaper
 	flatpak override --user --env=GTK_THEME=Adwaita
 	
@@ -17,6 +16,7 @@ if [ "$THEME" == "prefer-dark" ]; then
 	ln -sf ~/.config/rofi/themes/schemes/drun-light.rasi 	~/.config/rofi/themes/drun.rasi
 	ln -sf ~/.config/rofi/themes/schemes/power-light.rasi 	~/.config/rofi/themes/power.rasi
 	ln -sf ~/.config/dunst/schemes/dunstrc-light 			~/.config/dunst/dunstrc
+	rm ~/.config/gtk-4.0/gtk.css
 	
 	pkill foot -SIGUSR2
 	pkill waybar -SIGUSR2
@@ -28,7 +28,6 @@ else
 	gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
 	
 	kvantummanager --set Nordic
-	mv ~/.config/gtk-4.0/gtk.css.bak ~/.config/gtk-4.0/gtk.css
 	current-wallpaper
 	flatpak override --user --env=GTK_THEME=Nordic-darker-v40
 
@@ -37,7 +36,8 @@ else
 	ln -sf ~/.config/rofi/themes/schemes/drun-dark.rasi 	~/.config/rofi/themes/drun.rasi
 	ln -sf ~/.config/rofi/themes/schemes/power-dark.rasi 	~/.config/rofi/themes/power.rasi
 	ln -sf ~/.config/dunst/schemes/dunstrc-dark 			~/.config/dunst/dunstrc
-	
+	ln -sf ~/.config/gtk-4.0/schemes/gtk.css ~/.config/gtk-4.0/gtk.css 
+
 	pkill foot -SIGUSR1
 	pkill waybar -SIGUSR2
 	dunstctl reload
