@@ -50,7 +50,7 @@
 - Добавьте в $PATH путь $HOME/.local/bin, если еще нет
 - Склонируйте репозиторий
 ```bash
-git clone https://github.com/Kpaber/swayfx-dotfiles.git
+git clone https://github.com/Kpaber/swayfx-nord.git
 #Далее переходим в папку и выполняем stow
 cd swayfx-dotfiles
 stow .
