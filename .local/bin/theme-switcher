@@ -21,7 +21,7 @@ if [ "$THEME" == "prefer-dark" ]; then
 	pkill foot -SIGUSR2
 	pkill waybar -SIGUSR2
 	dunstctl reload
-	notify-send Light_theme On
+	notify-send 'Светлая тема' включена
 else
 	gsettings set org.gnome.desktop.interface gtk-theme Nordic-darker-v40
 	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
@@ -41,5 +41,5 @@ else
 	pkill foot -SIGUSR1
 	pkill waybar -SIGUSR2
 	dunstctl reload
-	notify-send Dark_theme On	
+	notify-send 'Темная тема' включена	
 fi
