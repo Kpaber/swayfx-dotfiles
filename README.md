@@ -36,8 +36,8 @@
 	- pavucontrol
 	- grim + slurp + swappy
 - Но вы можете использовать что-то вроде
-	-[rofi-bluetooth](https://github.com/nickclyde/rofi-bluetooth)
-	-[rofi-wifi-menu](https://github.com/ericmurphyxyz/rofi-wifi-menu)
+	- [rofi-bluetooth](https://github.com/nickclyde/rofi-bluetooth)
+	- [rofi-wifi-menu](https://github.com/ericmurphyxyz/rofi-wifi-menu)
 
 ## Перед установкой важно сказать, что это сугубо личные дотфайлы
 Я делал их для себя, под свое использование, под свой сетап, поэтому вам,
