@@ -1,4 +1,5 @@
 [global]
+	follow = mouse
 	format = "<b>%s</b>\n%b"
     origin = bottom-right
  	notification_limit = 5
@@ -15,4 +16,3 @@
     corner_radius = 4
     show_indicators = false
     highlight = "#d08770"
-		

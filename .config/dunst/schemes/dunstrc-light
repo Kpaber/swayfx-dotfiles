@@ -1,4 +1,5 @@
 [global]
+	follow = mouse
 	format = "<b>%s</b>\n%b"
     origin = bottom-right
  	notification_limit = 5

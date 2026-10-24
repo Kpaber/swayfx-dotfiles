@@ -163,7 +163,7 @@ mode "resize" {
 
 #---autostart--------------------------------------------------------------
 exec dbus-update-activation-environment --systemd --all
-exec sleep 0.3 && swaylock
+exec sleep 0.5 && swaylock
 exec current-wallpaper
 exec waybar
 exec dunst
