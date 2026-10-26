@@ -39,7 +39,7 @@ mainbox{
 
 listview{
 	children: [element];
-	padding: 8px;
+	padding: 4px;
 	spacing: 20px;
 	background-color: @bg;
 //	layout: horizontal;

@@ -32,6 +32,7 @@ window#waybar {
 #backlight,
 #language,
 #network,
+#bluetooth,
 #custom-power,
 #tray {
 	padding: 0 8px;
@@ -110,11 +111,15 @@ window#waybar {
 	margin: 0 4px;
 }
 
-#custom-bluetooth {
+#bluetooth {
 	color: @yellow;
 	margin: 0 8px; 
 }
 
+#bluetooth.disabled {
+	color: @red;
+	margin: 0 8px; 
+}
 /*#tray {
 	background-color: @background-alt;
 	border-radius: 4px;

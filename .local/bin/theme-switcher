@@ -15,6 +15,7 @@ if [ "$THEME" == "prefer-dark" ]; then
 	ln -sf ~/.config/waybar/schemes/style-light.css 		~/.config/waybar/style.css
 	ln -sf ~/.config/rofi/themes/schemes/drun-light.rasi 	~/.config/rofi/themes/drun.rasi
 	ln -sf ~/.config/rofi/themes/schemes/power-light.rasi 	~/.config/rofi/themes/power.rasi
+	ln -sf ~/.config/rofi/themes/schemes/config-light.rasi 	~/.config/rofi/themes/config.rasi
 	ln -sf ~/.config/dunst/schemes/dunstrc-light 			~/.config/dunst/dunstrc
 	rm ~/.config/gtk-4.0/gtk.css
 	
@@ -35,6 +36,7 @@ else
 	ln -sf ~/.config/waybar/schemes/style-dark.css 			~/.config/waybar/style.css
 	ln -sf ~/.config/rofi/themes/schemes/drun-dark.rasi 	~/.config/rofi/themes/drun.rasi
 	ln -sf ~/.config/rofi/themes/schemes/power-dark.rasi 	~/.config/rofi/themes/power.rasi
+	ln -sf ~/.config/rofi/themes/schemes/config-dark.rasi 	~/.config/rofi/themes/config.rasi
 	ln -sf ~/.config/dunst/schemes/dunstrc-dark 			~/.config/dunst/dunstrc
 	ln -sf ~/.config/gtk-4.0/schemes/gtk.css ~/.config/gtk-4.0/gtk.css 
 

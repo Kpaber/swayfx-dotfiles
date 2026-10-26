@@ -3,7 +3,7 @@
 	format = "<b>%s</b>\n%b"
     origin = bottom-right
  	notification_limit = 5
-    timeout = 5
+    timeout = 8
     icon_position = left
     max_icon_size = 48
     frame_width = 2
@@ -17,3 +17,6 @@
     show_indicators = false
     highlight = "#d08770"
 
+	dmenu = /usr/bin/rofi -dmenu
+	always_run_script = true
+	mouse_right_click = do_action
