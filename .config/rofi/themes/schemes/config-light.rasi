@@ -8,6 +8,11 @@
 	bg-alt: #2e3440 ;
 }
 
+configuration{
+	show-match: true;
+	fixed-num-lines: false;
+}
+
 window{
 //	width: 16%;
 //	height: 45%;
@@ -18,11 +23,11 @@ window{
 	border-radius: 4px;
 	//spacing: 16px;
 //	x-offset: -12;
-//	y-offset: 8;	
+	y-offset: 8;	
 }
 
 mainbox{
-	children: [listview];
+	children: [inputbar, listview];
 	spacing: 4px;
 	background-color: @bg;
 //	layout: horizontal;
@@ -31,15 +36,27 @@ mainbox{
 //	border-radius: 16px;
 	padding: 8px;
 }
+inputbar{
+	children: [dummy, prompt, dummy];
+	background-color: @bg;
+}
 
+dummy{
+	background-color: @bg;
+}
+
+prompt{
+	background-color: @bg;
+	text-color: @txt;
+}
 
 listview{
 	children: [element];
 	padding: 8px;
-	spacing: 20px;
+	spacing: 4px;
 	background-color: @bg;
 //	layout: horizontal;
-	lines: 7;
+ 	lines: 9;
 	border-radius: 16px;
 	
 	

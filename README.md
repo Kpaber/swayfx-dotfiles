@@ -22,6 +22,7 @@
 - [swayfx](https://github.com/wlrfx/swayfx)
 - [swaylock-effects](https://github.com/hboetes/swaylock-effects)
 - autotiling
+- cliphist
 - rofi
 - waybar
 - dunst
@@ -85,7 +86,7 @@ flatpak {--user} override --filesystem=xdg-config/Kvantum:ro \
 | `$mod` + `P` | Меню питания (**power.sh**) |
 | `$mod` + `Return` | Терминал (**foot**) |
 | `$mod` + `B` | Браузер (**Firefox**) |
-| `$mod` + `C` | Калькулятор (**Qalculate**) |
+| `$mod` + `C` | История буфера обмена(rofi-clipboard.sh) |
 | `$mod` + `F` | Файловый менеджер (**Thunar**) |
 | `$mod` + `V` | Настройки звука (**pavucontrol**) |
 | `$mod` + `I` | Настройки Wi-Fi (**iwgtk**) |
@@ -109,8 +110,8 @@ flatpak {--user} override --filesystem=xdg-config/Kvantum:ro \
 | `$mod` + `Alt` + `R` | Перезагрузить конфиг Sway (`reload`) |
 | `$mod` + `Alt` + `Q` | Выйти из Sway (`swaymsg exit`) |
 | `$mod` + `L` | Заблокировать экран (**swaylock**) |
-| `$mod` + `Alt` + `F` | Развернуть/свернуть окно на весь экран |
-| `$mod` + `Alt` + `S` | Включить/выключить плавающий режим (`floating toggle`) |
+| `$mod_alt` + `F` | Развернуть/свернуть окно на весь экран |
+| `$mod_alt` + `S` | Включить/выключить плавающий режим (`floating toggle`) |
 | `$mod` + `Shift` + `Space`| Переключить фокус между плавающими/тайловыми окнами |
 
 **Навигация и перемещение окон**
@@ -162,5 +163,3 @@ flatpak {--user} override --filesystem=xdg-config/Kvantum:ro \
 - Перестают отображаться окна на внешнем мониторе после гибернации или 
 в этом духе
 	- виноваты анимации, но я предпочитаю переткнуть монитор
-
-

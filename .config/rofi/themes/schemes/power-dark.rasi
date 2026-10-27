@@ -8,10 +8,6 @@
 	bg: #2e3440 ;
 }
 
-configuration{
-	location: 3;
-}
-
 window{
 	width: 16%;
 //	height: 45%;
